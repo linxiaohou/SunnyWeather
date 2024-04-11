@@ -84,7 +84,7 @@ class WeatherActivity : AppCompatActivity() {
         val realtime = weather.realtime
         val daily = weather.daily
         //填充now.xml布局中的数据
-        val currentTempText = "${realtime.temperature.toInt()} ℃"
+        val currentTempText = "${realtime.temperature.toInt()}℃"
         weatherBinding.nowLayout.currentTemp.text = currentTempText
         weatherBinding.nowLayout.currentSky.text = getSky(realtime.skycon).info
         val currentPM25Text = "空气指数 ${realtime.airQuality.aqi.chn.toInt()}"
@@ -105,12 +105,12 @@ class WeatherActivity : AppCompatActivity() {
             val skyIcon: ImageView = view.findViewById(R.id.skyIcon)
             val skyInfo: TextView = view.findViewById(R.id.skyInfo)
             val temperatureInfo: TextView = view.findViewById(R.id.temperatureInfo)
-            val simpleDateFormat = SimpleDateFormat("yyyy-MM-dd", Locale.getDefault())
+            val simpleDateFormat = SimpleDateFormat("MM月dd日", Locale.getDefault())
             dateInfo.text = simpleDateFormat.format(skycon.date)
             val sky = getSky(skycon.value)
             skyIcon.setImageResource(sky.icon)
             skyInfo.text = sky.info
-            val tempText = "${temperature.min.toInt()} ~ ${temperature.max.toInt()} ℃"
+            val tempText = "${temperature.min.toInt()}℃ ~ ${temperature.max.toInt()}℃"
             temperatureInfo.text = tempText
             weatherBinding.forecastLayout.forecastLayout.addView(view)
         }
