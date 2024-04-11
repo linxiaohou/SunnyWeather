@@ -1,19 +1,13 @@
 package com.sunnyweather.android.ui.weather
 
 import android.graphics.Color
-import android.os.Build
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
-import android.view.WindowInsets
-import android.view.WindowInsetsController
 import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
-import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowCompat
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.sunnyweather.android.R
@@ -81,7 +75,7 @@ class WeatherActivity : AppCompatActivity() {
             val skyIcon: ImageView = view.findViewById(R.id.skyIcon)
             val skyInfo: TextView = view.findViewById(R.id.skyInfo)
             val temperatureInfo: TextView = view.findViewById(R.id.temperatureInfo)
-            val simpleDateFormat = SimpleDateFormat("yyyy-mm-dd", Locale.getDefault())
+            val simpleDateFormat = SimpleDateFormat("yyyy-MM-dd", Locale.getDefault())
             dateInfo.text = simpleDateFormat.format(skycon.date)
             val sky = getSky(skycon.value)
             skyIcon.setImageResource(sky.icon)

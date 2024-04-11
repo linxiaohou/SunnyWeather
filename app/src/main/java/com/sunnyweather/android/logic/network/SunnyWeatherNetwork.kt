@@ -1,10 +1,8 @@
 package com.sunnyweather.android.logic.network
 
-import androidx.lifecycle.liveData
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
-import java.lang.RuntimeException
 import kotlin.coroutines.resume
 import kotlin.coroutines.resumeWithException
 import kotlin.coroutines.suspendCoroutine
